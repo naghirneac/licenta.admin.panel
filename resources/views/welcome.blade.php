@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #e6e6e6;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -61,6 +61,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            a{
+                padding: 5px;
+                border: 1px solid darkblue;
+            }
         </style>
     </head>
     <body>
@@ -68,32 +73,55 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        @if(Auth::user()->isDisabled())
+                            <strong>
+                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
+                            </strong>
+                        @elseif(Auth::user()->isUser())
+                            <strong>
+                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
+                            </strong>
+                            <strong>
+                                <a href="{{ url('/user/index') }}" style="color: #0b3e6f; text-decoration: none">Cabinet</a>
+                            </strong>
+                        @elseif(Auth::user()->isVisitor())
+                            <strong>
+                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
+                            </strong>
+                        @elseif(Auth::user()->isAdministrator())
+                            <strong>
+                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
+                            </strong>
+                            <strong>
+                                <a href="{{ url('/admin/index') }}" style="color: #0b3e6f; text-decoration: none">Panela de administrator</a>
+                            </strong>
+                        @endif
+
+                        <strong>
+                            <a class="dropdown-item" href="{{ route('logout') }}" style="color: #0b3e6f; text-decoration: none"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                Iesi
+                            </a>
+                        </strong>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none">
+                            @csrf
+                        </form>
+
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <strong>
+                            <a href="{{ route('login') }}" style="color: #0b3e6f; text-decoration: none">Login</a>
+                        </strong>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <strong>
+                                <a href="{{ route('register') }}" style="color: #0b3e6f; text-decoration: none">Register</a>
+                            </strong>
                         @endif
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
     </body>
 </html>
