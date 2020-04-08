@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c00fd05a77b62f0ab97c4aa31f1bc611",
+    "content-hash": "fe66160595331ecb7c4550fdcc6acc82",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -377,6 +377,65 @@
                 "trusted proxy"
             ],
             "time": "2020-02-22T01:51:47+00:00"
+        },
+        {
+            "name": "fomvasss/laravel-meta-tags",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fomvasss/laravel-meta-tags.git",
+                "reference": "8ec66457d8a4976dd95335b3cb6dfaa9738f8d74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fomvasss/laravel-meta-tags/zipball/8ec66457d8a4976dd95335b3cb6dfaa9738f8d74",
+                "reference": "8ec66457d8a4976dd95335b3cb6dfaa9738f8d74",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.8|^6.0|^7.0",
+                "illuminate/support": "^5.8|^6.0|^7.0",
+                "illuminate/view": "^5.8|^6.0|^7.0",
+                "php": ">=7.0.0"
+            },
+            "type": "composer-package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Fomvasss\\LaravelMetaTags\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "MetaTag": "Fomvasss\\LaravelMetaTags\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fomvasss\\LaravelMetaTags\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vasyl Fomin",
+                    "email": "fomvasss@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package to manage SEO (meta-tags, xml-fields, etc.)",
+            "keywords": [
+                "Sitemap",
+                "laravel",
+                "meta",
+                "meta tags",
+                "seo",
+                "tags",
+                "xml-map"
+            ],
+            "time": "2020-03-02T21:17:07+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3157,16 +3216,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.6",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "47fe531de31fca4a1b997f87308e7d7804348f7e"
+                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/47fe531de31fca4a1b997f87308e7d7804348f7e",
-                "reference": "47fe531de31fca4a1b997f87308e7d7804348f7e",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/95c63ab2117a72f48f5a55da9740a3273d45b7fd",
+                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd",
                 "shasum": ""
             },
             "require": {
@@ -3209,7 +3268,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2020-01-13T10:02:55+00:00"
+            "time": "2020-04-08T08:27:21+00:00"
         },
         {
             "name": "composer/composer",
