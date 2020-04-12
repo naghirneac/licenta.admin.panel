@@ -17,10 +17,14 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('idnp', 13)->unique();
+            $table->date('birth_date');
+            $table->date('enrolment_date');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('img',255)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

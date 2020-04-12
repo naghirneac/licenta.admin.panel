@@ -15,5 +15,9 @@
             $this->call(UsersTableSeeder::class);
             $this->call(UserRolesTableSeeder::class);
             $this->call(UsersWtTable::class);
+            $this->call(RequestTypesTableSeeder::class);
+            $this->call(RequestsTableSeeder::class);
+            $this->call(PositionsTableSeeder::class);
+            $this->call(UserPositionsTableSeeder::class);
         }
     }
