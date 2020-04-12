@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h4> Zakazi : 0</h4>
+                        <h4> Cereri : {{ $countRequests }}</h4>
                         <p>New</p>
                     </div>
                     <div class="icon">
@@ -28,7 +28,7 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h4> Zakazi : 0</h4>
+                        <h4> Functii : {{ $countPositions }}</h4>
                         <p>New</p>
                     </div>
                     <div class="icon">
@@ -43,7 +43,7 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h4> Utilizatori total :{{ $usersCount }}</h4>
+                        <h4> Utilizatori total :{{ $countUsers }}</h4>
                         <p>New</p>
                     </div>
                     <div class="icon">
@@ -69,6 +69,11 @@
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="col-md-6">
+            @include('blog.admin.main.include.requests')
+            @include('blog.admin.main.include.admins')
         </div>
     </section>
 @endsection
