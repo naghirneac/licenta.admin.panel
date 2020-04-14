@@ -26,7 +26,7 @@
                     @foreach($last_requests as $request)
                         <tr>
                             <td><a href="">{{$request->id}}</a></td>
-                            <td><a href="">{{$request->name}}</a></td>
+                            <td><a href="">{{$request->user_name}}</a></td>
                             <td>
                                 <span class="label label-success">
                                     @if($request->status == 0) Noua @endif

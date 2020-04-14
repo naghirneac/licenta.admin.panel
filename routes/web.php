@@ -29,6 +29,18 @@
         Route::group($groupData, function (){
             Route::resource('index', 'MainController')
                 ->names('blog.admin.index');
+
+            Route::resource('requests', 'RequestController')
+                ->names('blog.admin.requests');
+
+            Route::get('/requests/change/{id}', 'RequestController@change')
+                ->name('blog.admin.requests.change');
+
+            Route::post('/requests/save/{id}', 'RequestController@save')
+                ->name('blog.admin.requests.save');
+
+            Route::post('/requests/force_destroy/{id}', 'RequestController@force_destroy')
+                ->name('blog.admin.requests.force_destroy');
         });
     });
 

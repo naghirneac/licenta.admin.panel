@@ -7,11 +7,18 @@
             <i class="fa fa-dashboard"></i> {{$parent}}
         </a>
     </li>
-    {{--@if(isset($order))
+    @if(isset($request))
         <li>
-            <a href="">
-                <i></i>
+            <a href="{{route('blog.admin.requests.index')}}">
+                <i>{{$request}}</i>
             </a>
         </li>
-    @endif--}}
+    @endif
+    @if(isset($active))
+        <li>
+            <i class="active">
+                <i>{{$active}}</i>
+            </i>
+        </li>
+    @endif
 </ol>

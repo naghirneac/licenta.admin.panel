@@ -20,7 +20,7 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('adminlte/dist/css/skins/_all-skins.min.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/my.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/my.css')}}">--}}
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -109,21 +109,20 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Меню</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li><a href="/"><i class="fa fa-home"></i> <span>В магазин</span></a></li>
-                <li><a href=""><i class="fa fa-user"></i> <span>Главная админки</span></a></li>
-                <li><a href=""><i class="fa fa-shopping-cart"></i> <span>Заказы</span></a></li>
+                <li><a href="{{route('blog.admin.index.index')}}"><i class="fa fa-user-circle"></i> <span>Panela de admin</span></a></li>
+                <li><a href="{{route('blog.admin.requests.index')}}"><i class="fa fa-file-text-o"></i> <span>Cereri</span></a></li>
 
 
 
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-navicon"></i> <span>Категории</span>
+                    <a href="#"><i class="fa fa-users"></i> <span>Utilizatori</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Список категорий</a></li>
-                        <li><a href="">Добавить категорию</a></li>
+                        <li><a href="">Toti utilizatorii</a></li>
+                        <li><a href="">Adaugare utilizator</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -138,28 +137,7 @@
                     </ul>
                 </li>
                 <li><a href=""><i class="fa fa-database"></i> <span>Кэширование</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-users"></i> <span>Пользователи</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="">Список пользователей</a></li>
-                        <li><a href="">Добавить пользователя</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-usd"></i> <span>Валюты</span>
-                        <span class="pull-right-container">
-<i class="fa fa-angle-left pull-right"></i>
-</span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="">Список валют</a></li>
-                        <li><a href="">Добавить валюту</a></li>
-                    </ul>
-                </li>
+
                 <li class="treeview">
                     <a href="#"><i class="fa fa-filter"></i> <span>Фильтры</span>
                         <span class="pull-right-container">
@@ -195,7 +173,7 @@
     <div class="content-wrapper">
 
         <main id="app">
-            {{--@include('blog.admin.components.result_messages')--}}
+            @include('blog.admin.components.result_messages')
             @yield('content')
         </main>
     </div>
