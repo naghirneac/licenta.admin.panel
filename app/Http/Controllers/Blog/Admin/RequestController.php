@@ -102,7 +102,7 @@ class RequestController extends AdminBaseController
                 ->with(['success' => "Salvat cu succes!"]);
         } else {
             return back()
-                ->withErrors(['msg' => "Salvare esuata"]);
+                ->withErrors(['msg' => "Salvare eșuată!"]);
         }
     }
 
@@ -126,6 +126,41 @@ class RequestController extends AdminBaseController
      */
     public function destroy($id)
     {
-        //
+        $st = $this->requestRepository->changeStatusOnDelete($id);
+        if ($st) {
+            $result = \App\Models\Admin\Request::destroy($id);
+            if ($result) {
+                return  redirect()
+                    ->route('blog.admin.requests.index')
+                    ->with(['success' => "Cererea № $id a fost eliminată!"]);
+            } else {
+                return back()->withErrors(['msg' => 'Ștergere eșuată!']);
+            }
+        } else {
+            return back()->withErrors(['msg' => 'Statutul nu s-a schimbat!']);
+        }
+    }
+
+    /**
+     * Remove the request from database by id
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function force_destroy($id)
+    {
+        if (empty($id)){
+            return back()->withErrors(['msg' => 'Înregistrarea nu a fost găsită!']);
+        }
+        $result = \DB::table('requests')
+            ->delete($id);
+
+        if ($result) {
+            return  redirect()
+                ->route('blog.admin.requests.index')
+                ->with(['success' => "Cererea № $id a fost eliminată!"]);
+        } else {
+            return back()->withErrors(['msg' => 'Ștergere eșuată!']);
+        }
     }
 }

@@ -62,7 +62,7 @@ class RequestRepository extends CoreRepository
     }
 
     /**
-     * Function changes status of the request by id
+     * Function changes status of the request by id in '1' or '0'
      * @param $id    -id of the request
      * @return mixed -result
      */
@@ -74,6 +74,23 @@ class RequestRepository extends CoreRepository
         }
 
         $item->status = !empty($_GET['status']) ? '1' : '0';
+        $result = $item->update();
+        return $result;
+    }
+
+    /**
+     * Function changes status of the request by id in '2'
+     * @param $id    -id of the request
+     * @return mixed -result
+     */
+    public function changeStatusOnDelete($id)
+    {
+        $item = $this->getID($id);
+        if (!$item) {
+            abort(404);
+        }
+
+        $item->status = '2';
         $result = $item->update();
         return $result;
     }

@@ -39,7 +39,7 @@
             Route::post('/requests/save/{id}', 'RequestController@save')
                 ->name('blog.admin.requests.save');
 
-            Route::post('/requests/force_destroy/{id}', 'RequestController@force_destroy')
+            Route::get('/requests/force_destroy/{id}', 'RequestController@force_destroy')
                 ->name('blog.admin.requests.force_destroy');
         });
     });

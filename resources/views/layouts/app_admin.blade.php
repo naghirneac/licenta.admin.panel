@@ -121,8 +121,8 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Toti utilizatorii</a></li>
-                        <li><a href="">Adaugare utilizator</a></li>
+                        <li><a href="">Toți utilizatorii</a></li>
+                        <li><a href="">Adăugare utilizator</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -208,7 +208,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 
-<!-- === = ===  -->
-
+<!-- Confirm deleting  -->
+<script src="{{asset('js/my.js')}}"></script>
 </body>
 </html>

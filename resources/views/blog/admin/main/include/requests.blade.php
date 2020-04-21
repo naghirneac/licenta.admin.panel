@@ -29,9 +29,9 @@
                             <td><a href="">{{$request->user_name}}</a></td>
                             <td>
                                 <span class="label label-success">
-                                    @if($request->status == 0) Noua @endif
-                                    @if($request->status == 1) Acceptat @endif
-                                    @if($request->status == 2) Eliminat(Respins) @endif
+                                    @if($request->status == 0) Nouă @endif
+                                    @if($request->status == 1) Acceptată @endif
+                                    @if($request->status == 2) Respinsă @endif
                                 </span>
                             </td>
                         </tr>
@@ -42,6 +42,6 @@
     </div>
     <br>
     <div class="box-footer clearfix">
-        <a href="" class="btn btn-sm btn-info btn-flat pull-left"> Toate cererile</a>
+        <a href="{{route('blog.admin.requests.index')}}" class="btn btn-sm btn-info btn-flat pull-left"> Toate cererile</a>
     </div>
 </div>
