@@ -41,6 +41,9 @@
 
             Route::get('/requests/force_destroy/{id}', 'RequestController@force_destroy')
                 ->name('blog.admin.requests.force_destroy');
+
+            Route::resource('users', 'UserController')
+                ->names('blog.admin.users');
         });
     });
 

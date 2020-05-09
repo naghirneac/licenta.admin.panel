@@ -2066,7 +2066,7 @@ Expr = Sizzle.selectors = {
 				( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === "text" );
 		},
 
-		// Position-in-collection
+		// UserPosition-in-collection
 		"first": createPositionalPseudo(function() {
 			return [ 0 ];
 		}),

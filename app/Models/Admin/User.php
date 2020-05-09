@@ -13,7 +13,9 @@ class User extends Model
 
     protected $fillable = [
         'name',
-        'login',
+        'idnp',
+        'birth_date',
+        'enrolment_date',
         'email',
         'password',
     ];
@@ -33,5 +35,13 @@ class User extends Model
     public function roles()
     {
         return $this->belongsToMany('App\Models\Role', 'user_roles');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function positions()
+    {
+        return $this->belongsToMany('App\Models\Position', 'user_positions');
     }
 }

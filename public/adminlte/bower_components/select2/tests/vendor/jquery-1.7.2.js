@@ -5361,7 +5361,7 @@ var posProcess = function( selector, context, seed ) {
 		later = "",
 		root = context.nodeType ? [context] : context;
 
-	// Position selectors must be done after the filter
+	// UserPosition selectors must be done after the filter
 	// And so must :not(positional) so we move all PSEUDOs to the end
 	while ( (match = Expr.match.PSEUDO.exec( selector )) ) {
 		later += match[0];

@@ -175,7 +175,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		}
 
 		/*
-		 * - Position generation -
+		 * - UserPosition generation -
 		 * This block generates everything position related - it's the core of draggables.
 		 */
 
@@ -583,7 +583,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		}
 
 		/*
-		 * - Position constraining -
+		 * - UserPosition constraining -
 		 * Constrain the position to a mix of grid, containment.
 		 */
 

@@ -43,6 +43,7 @@ class User extends Authenticatable
 
     /**
      * Function returns users' roles
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function roles()
@@ -51,7 +52,18 @@ class User extends Authenticatable
     }
 
     /**
+     * Function returns users' positions
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function positions()
+    {
+        return $this->belongsToMany(Position::class, 'user_positions');
+    }
+
+    /**
      * Function verifies if admin exists
+     *
      * @return bool - result (true/false)
      */
     public function isAdministrator()
@@ -61,6 +73,7 @@ class User extends Authenticatable
 
     /**
      * Function verifies if user exists
+     *
      * @return string - "user" if exists
      */
     public function isUser()
@@ -71,6 +84,7 @@ class User extends Authenticatable
 
     /**
      * Function verifies if disabled user exists
+     *
      * @return string - "disabled" if exists
      */
     public function isDisabled()
@@ -81,6 +95,7 @@ class User extends Authenticatable
 
     /**
      * Function verifies if user exists
+     *
      * @return string - "user" if exists
      */
     public function isVisitor()

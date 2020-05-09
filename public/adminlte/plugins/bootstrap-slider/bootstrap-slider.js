@@ -1013,7 +1013,7 @@
 				this.handle2.style[this.stylePos] = positionPercentages[1]+'%';
 				this.handle2.setAttribute('aria-valuenow', this._state.value[1]);
 
-				/* Position ticks and labels */
+				/* UserPosition ticks and labels */
 				if (Array.isArray(this.options.ticks) && this.options.ticks.length > 0) {
 
 					var styleSize = this.options.orientation === 'vertical' ? 'height' : 'width';

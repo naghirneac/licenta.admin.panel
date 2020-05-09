@@ -1043,7 +1043,7 @@ var mouse = $.widget("ui.mouse", {
 
 
 /*!
- * jQuery UI Position 1.11.4
+ * jQuery UI UserPosition 1.11.4
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -5998,7 +5998,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		}
 
 		/*
-		 * - Position generation -
+		 * - UserPosition generation -
 		 * This block generates everything position related - it's the core of draggables.
 		 */
 
@@ -6406,7 +6406,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		}
 
 		/*
-		 * - Position constraining -
+		 * - UserPosition constraining -
 		 * Constrain the position to a mix of grid, containment.
 		 */
 
@@ -13662,7 +13662,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		this._cacheHelperProportions();
 
 		/*
-		 * - Position generation -
+		 * - UserPosition generation -
 		 * This block generates everything position related - it's the core of draggables.
 		 */
 
@@ -14592,7 +14592,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 		}
 
 		/*
-		 * - Position constraining -
+		 * - UserPosition constraining -
 		 * Constrain the position to a mix of grid, containment.
 		 */
 

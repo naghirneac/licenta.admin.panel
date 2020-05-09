@@ -121,12 +121,12 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Toți utilizatorii</a></li>
-                        <li><a href="">Adăugare utilizator</a></li>
+                        <li><a href="{{route('blog.admin.users.index')}}">Toți utilizatorii</a></li>
+                        <li><a href="{{route('blog.admin.users.create')}}">Adăugare utilizator</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-cubes"></i> <span>Товары</span>
+                    <a href="#"><i class="fa fa-cubes"></i> <span>Statistica</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
