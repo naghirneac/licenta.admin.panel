@@ -162,12 +162,10 @@ class UserController extends AdminBaseController
                 ->withErrors(['msg' => 'Eroare la salvare'])
                 ->withInput();
         } else {
-//            var_dump($position->where('user_id', $user->id)->where('position_id', '<>', (int)$request['position'])->first());
-//            die();
             $role->where('user_id', $user->id)->update(['role_id' => (int)$request['role']]);
             $position->where('user_id', (int)$user->id)->limit(1)->update(['position_id' => (int)$request['position']]);
-            if ($position->where('user_id', $user->id)->where('position_id', '<>', (int)$request['position'])->limit(1)){
-                $position->where('user_id', $user->id)->where('position_id', '<>', (int)$request['position'])->limit(1)
+            if ($position->where('user_id', $user->id)->where('position_id', '<>', (int)$request['position'])->first()){
+                $position->where('user_id', $user->id)->where('position_id', '<>', (int)$request['position'])->first()
                     ->update(['position_id' => (int)$request['extraPosition']]);
             } else {
                 $position->create(['user_id' => $user->id, 'position_id' => (int)$request['extraPosition']]);
