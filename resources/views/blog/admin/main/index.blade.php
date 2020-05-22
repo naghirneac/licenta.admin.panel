@@ -58,22 +58,20 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h4> Zakazi : 0</h4>
-                        <p>Total</p>
+                        <h4> Statistica</h4>
+                        <p>Pentru luna mai</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="" class="small-box-footer">
+                    <a href="{{route('blog.admin.statistics.index')}}" class="small-box-footer">
                         Detalii <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
+        <div class="col-md-6" >
             @include('blog.admin.main.include.requests')
-            @include('blog.admin.main.include.admins')
         </div>
     </section>
 @endsection

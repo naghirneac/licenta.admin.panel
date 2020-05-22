@@ -44,6 +44,12 @@
 
             Route::resource('users', 'UserController')
                 ->names('blog.admin.users');
+
+            Route::resource('statistics', 'StatisticController')
+                ->names('blog.admin.statistics');
+
+            Route::get('/statistics/force_destroy/{id}', 'StatisticController@force_destroy')
+                ->name('blog.admin.statistics.force_destroy');
         });
     });
 
