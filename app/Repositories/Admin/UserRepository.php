@@ -130,4 +130,17 @@ class UserRepository extends CoreRepository
         return $count;
     }
 
+    /**
+     * Get request types
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function getRequestTypes()
+    {
+        $reqTypes = \DB::table('request_types')
+            ->get();
+
+        return $reqTypes;
+    }
+
 }

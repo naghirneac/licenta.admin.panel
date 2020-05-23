@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         @component('blog.admin.components.breadcrumb')
-            @slot('title') Panela de administrare @endslot
+            @slot('title') Panoul de administrare @endslot
             @slot('parent') Home @endslot
             @slot('active') Toate cererile @endslot
         @endcomponent

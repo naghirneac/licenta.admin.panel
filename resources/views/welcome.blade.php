@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Managementul timpului de lucru ai angajaților</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -71,54 +71,78 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="links">
                     @auth
                         @if(Auth::user()->isDisabled())
-                            <strong>
-                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
-                            </strong>
+                            <div class="jumbotron" align="center">
+                                <h1 class="display-4" style="color: #0b3e6f;">Salut, {{Auth::user()->name}}!</h1>
+                                <p class="lead" style="color: #0b3e6f;">Bine ați venit în aplicația „Managementul timpului de lucru ai angajaților”.</p>
+                                <hr class="my-4">
+                                <p style="color: #0b3e6f;">Profilul Dvs. este <b>deactivat</b>. Adresați-vă la administrator.</p>
+                                <strong>
+                                    <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasă</a>
+                                </strong>
                         @elseif(Auth::user()->isUser())
-                            <strong>
-                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
-                            </strong>
-                            <strong>
-                                <a href="{{ url('/user/index') }}" style="color: #0b3e6f; text-decoration: none">Cabinet</a>
-                            </strong>
+                            <div class="jumbotron" align="center">
+                                <h1 class="display-4" style="color: #0b3e6f;">Salut, {{Auth::user()->name}}!</h1>
+                                <p class="lead" style="color: #0b3e6f;">Bine ați venit în aplicația „Managementul timpului de lucru ai angajaților”.</p>
+                                <hr class="my-4">
+                                <p style="color: #0b3e6f;">Dumneavoastră v-ați logat în calitate de <b>utilizator</b>.</p>
+                                <strong>
+                                    <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasă</a>
+                                </strong>
+                                <strong>
+                                    <a href="{{ url('/user/index') }}" style="color: #0b3e6f; text-decoration: none">Cabinet</a>
+                                </strong>
                         @elseif(Auth::user()->isVisitor())
                             <strong>
-                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
+                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasă</a>
                             </strong>
                         @elseif(Auth::user()->isAdministrator())
-                            <strong>
-                                <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasa</a>
-                            </strong>
-                            <strong>
-                                <a href="{{ url('/admin/index') }}" style="color: #0b3e6f; text-decoration: none">Panela de administrator</a>
-                            </strong>
+                            <div class="jumbotron" align="center">
+                                <h1 class="display-4" style="color: #0b3e6f;">Salut, {{Auth::user()->name}}!</h1>
+                                <p class="lead" style="color: #0b3e6f;">Bine ați venit în aplicația „Managementul timpului de lucru ai angajaților”.</p>
+                                <hr class="my-4">
+                                <p style="color: #0b3e6f;">Dumneavoastră v-ați logat în calitate de <b>administrator</b>.</p>
+                                <strong>
+                                    <a href="{{ url('/') }}" style="color: #0b3e6f; text-decoration: none">Acasă</a>
+                                </strong>
+                                <strong>
+                                    <a href="{{ url('/admin/index') }}" style="color: #0b3e6f; text-decoration: none">Panoul de administrator</a>
+                                </strong>
                         @endif
 
-                        <strong>
-                            <a class="dropdown-item" href="{{ route('logout') }}" style="color: #0b3e6f; text-decoration: none"
-                                onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                Iesi
-                            </a>
-                        </strong>
+                                <strong>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" style="color: #0b3e6f; text-decoration: none"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        Ieșire
+                                    </a>
+                                </strong>
+                            </div>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none">
                             @csrf
                         </form>
 
                     @else
-                        <strong>
-                            <a href="{{ route('login') }}" style="color: #0b3e6f; text-decoration: none">Login</a>
-                        </strong>
-
-                        @if (Route::has('register'))
+                        <div class="jumbotron" align="center">
+                            <h1 class="display-4" style="color: #0b3e6f;">Bine ați venit!</h1>
+                            <p class="lead" style="color: #0b3e6f;">Bine ați venit în aplicația „Managementul timpului de lucru ai angajaților”.</p>
+                            <hr class="my-4">
+                            <p style="color: #0b3e6f;">Această aplicație gestionează timpul de lucru ai angajaților.
+                                <br> Elaborată de Naghirneac Ana. IS31Z. 2020.</p>
                             <strong>
-                                <a href="{{ route('register') }}" style="color: #0b3e6f; text-decoration: none">Register</a>
+                                <a href="{{ route('login') }}" style="color: #0b3e6f; text-decoration: none">Logare</a>
                             </strong>
-                        @endif
+
+                            @if (Route::has('register'))
+                                <strong>
+                                    <a href="{{ route('register') }}" style="color: #0b3e6f; text-decoration: none">Înregistrare</a>
+                                </strong>
+                            @endif
+                        </div>
+
                     @endauth
                 </div>
             @endif
