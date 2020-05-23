@@ -54,4 +54,11 @@
     });
 
     /*User side*/
-    Route::get('user/index', 'Blog\User\MainController@index');
+    Route::get('user/index', 'Blog\User\MainController@index')
+        ->name('user.index');
+    Route::get('user/calendar', 'Blog\User\MainController@calendar');
+    Route::get('user/fetchEvents', 'Blog\User\MainController@fetchEvents');
+    Route::post('user/addEvent', 'Blog\User\MainController@addEvent');
+    Route::post('user/removeEvent', 'Blog\User\MainController@removeEvent');
+    Route::post('user/add_request_to_admin', 'Blog\User\MainController@addRequestToAdmin')
+        ->name('add.request.to.admin');

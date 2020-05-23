@@ -1,0 +1,17 @@
+{
+  "name": "TEZA.DE.LICENTA",
+  "description": "teza de licenta",
+  "main": "",
+  "authors": [
+    "anaghirneac <anna.naghirneac98@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/naghirneac/licenta.admin.panel",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ]
+}
