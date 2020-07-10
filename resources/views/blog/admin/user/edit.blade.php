@@ -100,8 +100,48 @@
                         <div class="box-footer">
                             <input type="hidden" name="id" value="{{$item->id}}">
                             <button type="submit" value="submit" class="btn btn-primary">Salvează</button>
+                            <button type="button" id="report" class="btn btn-success" data-toggle="modal" data-target="#reportMonth">Raport lunar</button>
                         </div>
                     </form>
+                </div>
+
+
+                {{-- Modal --}}
+                <div class="modal fade" id="reportMonth" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="staticBackdropLabel">Raport pe luna {{$month}}</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h4><b>Numele angajatului:</b> {{$item->name}}</h4><hr>
+                                <h4><b>IDNP:</b> {{$item->idnp}}</h4><hr>
+                                <h4><b>Data nașterii:</b> {{$item->birth_date}}</h4><hr>
+                                <h4><b>Data angajării:</b> {{$item->enrolment_date}}</h4><hr>
+                                @php
+                                    foreach ($allPositions as $onePosition)
+                                        if ($onePosition->id === $firstPosition)
+                                            $firstPosition = $onePosition->name;
+                                @endphp
+                                <h4><b>Funcția de bază:</b> {{$firstPosition}}</h4><hr>
+                                @php
+                                    foreach ($allPositions as $onePosition)
+                                        if ($onePosition->id === $secondPosition)
+                                            $secondPosition = $onePosition->name;
+                                @endphp
+                                <h4><b>Funcția suplimentară:</b> {{$secondPosition}}</h4><hr>
+                                <h4><b>E-mail:</b> {{$item->email}}</h4><hr>
+                                <h4><b>Orele lucrate luna curentă:</b> {{$wt}}</h4>
+                            </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Închide</button>
+                                </div>
+                        </div>
+                    </div>
                 </div>
                 <h3>Cererile utilizatorului:</h3>
                 <div class="box">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog\User;
 
+use App\Repositories\Admin\StatisticRepository;
 use App\Repositories\Admin\UserRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,9 +28,11 @@ class MainController extends Controller
     public function index()
     {
        $requestTypes = app(UserRepository::class)->getRequestTypes();
+       $month = app(StatisticRepository::class)->getCurrentMonth();
+       $wt = app(StatisticRepository::class)->getOneUserWt(\Auth::id());
 
         MetaTag::setTags(['title' => 'Utilizator']);
-        return view('blog.user.index', compact('requestTypes'));
+        return view('blog.user.index', compact('requestTypes', 'month', 'wt'));
     }
 
     /**

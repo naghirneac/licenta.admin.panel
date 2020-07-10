@@ -59,7 +59,7 @@ class StatisticRepository extends CoreRepository
             $sum = $sum + $hours*60 + $minutes;
         }
 
-        $monthWt = $sum / 60;
+        $monthWt = round($sum / 60, 2);
 
         return $monthWt;
     }

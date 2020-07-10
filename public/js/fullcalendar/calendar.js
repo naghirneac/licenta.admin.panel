@@ -1,3 +1,5 @@
+import {days} from "../../adminlte/bower_components/moment/src/lib/duration/get";
+
 $(function(){
     $.ajaxSetup({
         headers: {
@@ -19,6 +21,10 @@ $(function(){
         eventRender: function (event, element, view) {
             event.allDay = event.allDay === 'true';
         },
+        businessHours:{
+            dow: [ 1, 2, 3, 4, 5, 6 ],
+        },
+        selectConstraint: "businessHours",
         selectable: true,
         selectHelper: true,
         select: function (start, end, allDay) {

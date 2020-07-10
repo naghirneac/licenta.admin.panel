@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('js/fullcalendar/fullcalendar.min.css') }}" />
 <style>
     #calendar {
-        width: 700px;
+        width: 70%;
         margin: 0 auto;
     }
 
@@ -23,12 +23,23 @@
         width: 10%;
         margin-left: 45%;
     }
+
+    #month{
+        width: 20%;
+        float: right;
+        color: darkgreen;
+        font-size: 90%;
+    }
 </style>
 @section('content')
 
     <section class="content">
         <div class="row justify-content-center">
             <div class="col-md-12">
+                <div id="month">
+                    <span>Norma pe luna {{$month}}: 168 ore</span> <br>
+                    <span>Total lucrat: {{$wt}} ore</span>
+                </div>
                 <div class="response"></div>
                 <div id="calendar"></div>
                 <br>

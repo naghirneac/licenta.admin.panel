@@ -8,6 +8,7 @@ use App\Models\UserPosition;
 use App\Models\UserRole;
 use App\Repositories\Admin\MainRepository;
 use App\Repositories\Admin\PositionRepository;
+use App\Repositories\Admin\StatisticRepository;
 use App\Repositories\Admin\UserRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -126,6 +127,8 @@ class UserController extends AdminBaseController
         $count = $this->userRepository->getCountRequestsPag($id);
         $countRequests = $this->userRepository->getCountRequests($id, $perpage);
         $allPositions = app(PositionRepository::class)->getAllPositions(20);
+        $month = app(StatisticRepository::class)->getCurrentMonth();
+        $wt = app(StatisticRepository::class)->getOneUserWt($id);
 
         if (count($position) > 1){
             $firstPosition = $position[0];
@@ -137,7 +140,7 @@ class UserController extends AdminBaseController
 
         MetaTag::setTags(['title' => "Editarea utilizatorului № {$item->id}"]);
         return view('blog.admin.user.edit', compact('item', 'requests', 'role', 'count', 'countRequests',
-            'allPositions', 'firstPosition', 'secondPosition'));
+            'allPositions', 'firstPosition', 'secondPosition', 'month', 'wt'));
     }
 
 

@@ -77,7 +77,7 @@
 
        @endphp
 
-       <div id="chartContainer" style="margin-top: 5%; margin-left: 15%; width: 70%;"></div>
+       <div id="chartContainer" style="margin-top: 5%; margin-left: 12%; width: 76%;"></div>
 
        <script>
            window.onload = function ($data) {
@@ -88,7 +88,7 @@
                        text: "Timpul lucrat pentru luna {{$month}}"
                    },
                    axisY: {
-                       title: "Timpul lucrat (in ore)",
+                       title: "Timp lucrat(norma:168 ore)",
                        suffix: "o",
                        includeZero: false
                    },
